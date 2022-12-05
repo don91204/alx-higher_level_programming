@@ -6,7 +6,6 @@
  *
  * Return: pointer to the first node in the new list
  */
-
 void reverse_listint(listint_t **head)
 {
 	listint_t *prev = NULL;
@@ -24,24 +23,20 @@ void reverse_listint(listint_t **head)
 	*head = prev;
 }
 
-
 /**
  * is_palindrome - checks if a linked list is a palindrome
  * @head: double pointer to the linked list
  *
  * Return: 1 if it is, 0 if not
  */
-
 int is_palindrome(listint_t **head)
 {
-
 	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
 	while (1)
-
 	{
 		fast = fast->next->next;
 		if (!fast)
@@ -58,7 +53,6 @@ int is_palindrome(listint_t **head)
 	}
 
 	reverse_listint(&dup);
-
 	while (dup && temp)
 	{
 		if (temp->n == dup->n)
@@ -66,7 +60,6 @@ int is_palindrome(listint_t **head)
 			dup = dup->next;
 			temp = temp->next;
 		}
-
 		else
 			return (0);
 	}
